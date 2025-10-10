@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YOKOSO</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+        <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+    </head>
+
+    <body>
+       <header>
+       <!-- a significa anchor(ancla) para hacer enlaces-->
+            <a href="{{ url_for('index') }}">Inicio</a>
+            <a href="{{ url_for('math') }}">Matematicas</a>
+            <a href="{{ url_for('azulejos')}}">Calculador de Azulejos</a>
+       </header>

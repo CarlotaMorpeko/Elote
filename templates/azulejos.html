@@ -1,0 +1,14 @@
+{% include 'header.html' %}  
+                <main>
+                        <p>Calculador de Azulejos</p>
+                        <p>Ingresa el largo de la superficie</p>
+                        <input id="input-suelo" class="input-welcome" type="number" placeholder="Largo en metros">
+                        <p>Ingresa el ancho de la superficie</p>
+                        <input id="input-ancho" class="input-welcome" type="number" placeholder="Ancho en metros">
+                        <p>ingrese el precio del azulejo por unidad</p>
+                        <input id="input-precio" class="input-welcome" type="number" placeholder="Precio C/U">
+                        <button class="button-ok" id="btn-azulejos">Calular</button>
+                    
+                </main>
+                <script src="{{ url_for('static', filename='js/azulejos.js')}}"></script>
+{% include 'fooder.html' %}

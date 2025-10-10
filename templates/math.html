@@ -1,0 +1,15 @@
+{% include 'header.html' %}
+        <main>
+            <div>
+                <p>Ingresa un numero</p>
+                <input id="input-value1" class="input-welcome" type="number" placeholder="Ingresa un numero">
+                <p>Ingresa otro numero</p>
+                <input id="input-value2" class="input-welcome" type="number" placeholder="Ingrese un numero">
+                <button class="button-ok" id="btn-sum">Sumar</button>
+                <button class="button-ok" id="btn-rest">Restar</button>
+                <button class="button-ok" id="btn-multi">Multiplicar</button>
+                <button class="button-ok" id="btn-divi">Dividir</button>
+            </div>
+        </main>
+        <script src="{{ url_for('static', filename='js/math.js')}}"></script>
+{% include 'fooder.html' %}
