@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from entities.palindrome import Palindrome
+from entities.abba_money import Conversor
 
 app = Flask(__name__)
 
@@ -23,8 +24,18 @@ def palindrome():
 
         p = Palindrome(phrase)
         result = p.is_palindrome()
-        return render_template('result.html', resultado = result)
+        return render_template('resulti.html', resultado=result)
     return render_template('palindrome.html')
+
+@app.route('/abba', methods=['GET', 'POST'])
+def abba():
+    if request.method == 'POST':
+        number = request.form.get('input_number', '')
+
+        p = Conversor(number)
+        result = p.is_money()
+        return render_template('cambio.html', resultado=result)
+    return render_template('abba.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5147)

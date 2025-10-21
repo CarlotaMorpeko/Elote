@@ -4,7 +4,7 @@ class Palindrome:
     def __init__(self, phrase):
         self.phrase = phrase
 
-        def is_palindrome(self) -> bool:
+    def is_palindrome(self) -> bool:
             p = self.phrase
             #si es palindromo retorna True y si no False
             p = p.replace(" ", "").lower()
