@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from entities.palindrome import Palindrome
 from entities.abba_money import Conversor
+from entities.animal import Animal
 
 app = Flask(__name__)
 
@@ -36,6 +37,10 @@ def abba():
         result = p.is_money()
         return render_template('cambio.html', resultado=result)
     return render_template('abba.html')
+
+@app.route('/pokemons')
+def animals():
+    return render_template('pokemons.html', animals = Animal.get_list())
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5147)
