@@ -11,11 +11,12 @@ class Randomizer:
         num1 = self.number1
         num2 = self.number2
         num3 = self.number3
-        if num1 == numero:
+        ganador = numero
+        if num1 == ganador:
             return True
-        elif num2 == numero:
+        elif num2 == ganador:
             return True
-        elif num3 == numero:
+        elif num3 == ganador:
             return True
         else:
             return False

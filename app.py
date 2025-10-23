@@ -47,10 +47,12 @@ def animals():
 @app.route('/mcsorteositson', methods=['GET', 'POST'])
 def mcsorteositson():
     if request.method == 'POST':
-        number1 = request.form.get('input_Mcnumber', '')
-        number2 = request.form.get('input_Mcnumber2', '')
-        number3 = request.form.get('input_Mcnumber3', '')
+        number1 = request.form.get('input_Mcnumber', '0')
+        number2 = request.form.get('input_Mcnumber2', '0')
+        number3 = request.form.get('input_Mcnumber3', '0')
+        
         n = Randomizer(number1, number2, number3)
+        
         result = n.is_jackpot()
         return render_template('jackpot.html', resultado=result)
     return render_template('mcsorteositson.html')
