@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from entities.palindrome import Palindrome
 from entities.abba_money import Conversor
 from entities.animal import Animal
+from entities.randomizer import Randomizer
 
 app = Flask(__name__)
 
@@ -32,6 +33,7 @@ def palindrome():
 def abba():
     if request.method == 'POST':
         number = request.form.get('input_number', '')
+        number
 
         p = Conversor(number)
         result = p.is_money()
@@ -41,6 +43,17 @@ def abba():
 @app.route('/pokemons')
 def animals():
     return render_template('pokemons.html', animals = Animal.get_list())
+
+@app.route('/mcsorteositson', methods=['GET', 'POST'])
+def mcsorteositson():
+    if request.method == 'POST':
+        number1 = request.form.get('input_Mcnumber', '')
+        number2 = request.form.get('input_Mcnumber2', '')
+        number3 = request.form.get('input_Mcnumber3', '')
+        n = Randomizer(number1, number2, number3)
+        result = n.is_jackpot()
+        return render_template('jackpot.html', resultado=result)
+    return render_template('mcsorteositson.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5147)
