@@ -7,7 +7,7 @@ class Randomizer:
         self.number3 = number3
         
     def is_jackpot(self) -> bool: 
-        numero = random.randint(1, 3)
+        numero = random.randint(1, 100)
         num1 = self.number1
         num2 = self.number2
         num3 = self.number3
