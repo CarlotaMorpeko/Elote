@@ -7,16 +7,13 @@ class Randomizer:
         self.number3 = number3
         
     def is_jackpot(self) -> bool: 
-        numero = random.randint(1, 100)
-        num1 = self.number1
-        num2 = self.number2
-        num3 = self.number3
-        ganador = numero
-        if num1 == ganador:
-            return True
-        elif num2 == ganador:
-            return True
-        elif num3 == ganador:
+        
+        num1 = int(self.number1)
+        num2 = int(self.number2)
+        num3 = int(self.number3)
+        ganador = random.randint(1,100)
+        if num1 == ganador or num2 == ganador or num3 == ganador:
             return True
         else:
             return False
+        
